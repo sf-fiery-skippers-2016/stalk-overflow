@@ -17,9 +17,9 @@ post '/users/:user_id/questions' do
 end
 
 get '/users/:user_id/questions/:id' do
-
+  # Individual view of a question
   #your code here
-  erb :"/users/:id"
+  erb :"/users/question"
 end
 
  get '/users/:user_id/questions/:id/edit' do
