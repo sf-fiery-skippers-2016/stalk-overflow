@@ -9,7 +9,7 @@
     </li>
   </ul>
 
-  <% if question.answers.each do .top_answer %>
+  <% if top_answer = question.answers.find{|answer| answer.top_answer} %>
   <h3>Top Answer</h3>
   <div class="row">
     <div class="col s10">
@@ -17,7 +17,7 @@
         <li class="collection-item avatar answer">
           <img src="images/yuna.jpg" alt="" class="circle">
 
-          <p><%= question.top_answer.body %>
+          <p><%= top_answer.body %>
           </p>
           <a href="#!" class="secondary-content"><i class="material-icons">vote</i></a>
         </li>
