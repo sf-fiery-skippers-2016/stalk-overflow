@@ -1,6 +1,5 @@
 get '/users/:user_id/questions/new' do
-  
-  
+   logged_in?
   #your code here
   erb :"/questions/new"
 end
@@ -19,7 +18,7 @@ end
 
 # Individual view of a question
 get '/users/:user_id/questions/:id' do
-  
+
   #your code here
   erb :"/users/question"
 end
