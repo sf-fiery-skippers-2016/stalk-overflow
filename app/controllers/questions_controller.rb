@@ -1,23 +1,24 @@
-get '/users/:user_id/questions' do
-
-  #your code here
-
-end
-
 get '/users/:user_id/questions/new' do
    logged_in?
   #your code here
   erb :"/questions/new"
 end
 
+#create new question and save to DB
 post '/users/:user_id/questions' do
 
-  #your code here
+  @question = Question.create(title: params[:title], body: params[:body], user_id: 1)
+  if @question
   redirect "/users/:user_id/questions/:id"
+  else
+    #change this redirect to pass the correct session ID
+    redirect '/users/1/questions/new'
+  end
 end
 
+# Individual view of a question
 get '/users/:user_id/questions/:id' do
-  # Individual view of a question
+
   #your code here
   erb :"/users/question"
 end
