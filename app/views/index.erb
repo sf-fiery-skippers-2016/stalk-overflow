@@ -1,10 +1,21 @@
-  <h1>Latest Questions...</h1>
+<div class="row">
+<div class="col s10"><h3>Latest Questions...</h3></div>
+<div class="col s2">
+</br>
+  <a class="btn-floating btn-large waves-effect waves-light red" href="/users/<%= session[:id].id %>/questions/new"><i class="material-icons">add</i></a>
+</div>
+</div>
+<div class="row">
 
 <ul class="collection question-list">
   <% @questions.each do |question| %>
-  <div id="<%= question.id %>">
-  <!-- route needs to be changed still -->
-  <a href="/users/1/questions/<%= question.id %>"><li><%= question.title %></li></a>
-  </div>
+     <li class="collection-item avatar" id="<%= question.id %>">
+      <!-- <img src="images/yuna.jpg" alt="" class="circle"> -->
+      <a href="/users/1/questions/<%= question.id %>" class="title"><%= question.title %> ?</a>
+
+      <a href="#!" class="secondary-content"><i class="material-icons">vote</i></a>
+    </li>
+
   <% end %>
 </ul>
+</div>
