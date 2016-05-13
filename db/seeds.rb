@@ -15,7 +15,7 @@ end
 	end
 end
 
-10.times do
+3.times do
   	Question.all.each do |question|
   		question.responses.create(
   			body: Faker::StarWars.quote,
@@ -24,7 +24,7 @@ end
 		end
 end
 
-10.times do
+3.times do
   	Answer.all.each do |answer|
   		answer.responses.create(
   			body: Faker::StarWars.quote,
@@ -33,7 +33,7 @@ end
 		end
 end
 
-10.times do
+3.times do
 
 	Question.all.each do |question|
 		question.answers.create(
@@ -44,7 +44,7 @@ end
 
 end
 
-10.times do
+3.times do
   Question.all.each do |question|
   	question.votes.create(
   		user_id: rand(1..User.all.length)
@@ -52,7 +52,7 @@ end
   end
 end
 
-10.times do
+3.times do
   Response.all.each do |response|
   	response.votes.create(
   		user_id: rand(1..User.all.length)
@@ -60,7 +60,7 @@ end
   end
 end
 
-10.times do
+3.times do
   Answer.all.each do |answer|
   	answer.votes.create(
   		user_id: rand(1..User.all.length)
