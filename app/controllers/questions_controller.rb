@@ -17,7 +17,6 @@ end
 
 #Question Show Page
 get '/users/:user_id/questions/:id' do
-  p "///////////////////////////////////////////////////////////////////"
   @question = Question.find(params[:id])
   erb :"/questions/show"
 end
@@ -30,8 +29,9 @@ end
 
 post '/users/:user_id/answers/:id/reply' do
 #make new response for question
-  @reply = Answer.find(params[:id]).replies.create(body: params[:comment])
-  redirect "/users/#{params[:user_id]}/questions/#{params[:id]}"
+  @answer = Answer.find(params[:id])
+  @reply = @answer.replies.create(body: params[:comment])
+  redirect "/users/#{params[:user_id]}/questions/#{@answer.question.id}"
 end
 
 
