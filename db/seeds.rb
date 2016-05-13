@@ -4,6 +4,13 @@
   	email: Faker::Internet.email)
 end
 
+# 30.times do
+#   u_id = rand(1..5)
+# User.find_by(id: u_id)
+# Question.answers.create(body: Faker::StarWars.quote,
+#         user_id: rand(1..User.all.length))
+
+# end
 
 5.times do
   User.all.each do |user|
@@ -17,7 +24,7 @@ end
 
 3.times do
   	Question.all.each do |question|
-  		question.responses.create(
+  		question.replies.create(
   			body: Faker::StarWars.quote,
   			user_id: rand(1..User.all.length)
   			)
@@ -26,7 +33,7 @@ end
 
 3.times do
   	Answer.all.each do |answer|
-  		answer.responses.create(
+  		answer.replies.create(
   			body: Faker::StarWars.quote,
   			user_id: rand(1..User.all.length)
   			)
@@ -53,8 +60,8 @@ end
 end
 
 3.times do
-  Response.all.each do |response|
-  	response.votes.create(
+  Reply.all.each do |reply|
+  	reply.votes.create(
   		user_id: rand(1..User.all.length)
   		)
   end

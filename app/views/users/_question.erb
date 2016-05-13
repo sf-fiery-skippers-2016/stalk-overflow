@@ -1,6 +1,6 @@
 <div class="question-vote">
-<a href="/users/<%= session[:id].id %>/questions/<%= question.id %>/vote"><span>^</span></a>
-<h1><%= question.title %></h1>
+<a href="/users/<%= session[:id].id %>/questions/<%= question.id %>"><span>^</span></a>
+<h1><a href='/users/<%= question.user.id %>/questions/<%= question.id %>'><%= question.title %></a></h1>
 </div>
 
   <ul class="collection">
@@ -30,5 +30,5 @@
     </div>
   </div>
   <% end %>
-  <%= erb :"_response", layout: false, locals: {post: @question} %>
 
+<%= erb :'_reply', layout: false, locals: { post: question } %>
