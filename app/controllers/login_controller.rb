@@ -11,8 +11,7 @@ post '/login' do
     new_user = User.find_by(username: username)
 
     if new_user && new_user.authenticate(password)
-      session[:id] = new_user.id
-      p "new user"
+      session[:id] = new_user
       redirect '/' #Is this the route we are redirecting?
     else
       redirect '/login?error=Wrong%20combination%20of%20user%20and%20password'

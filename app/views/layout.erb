@@ -21,14 +21,14 @@
 
         <li><a href="/users/<%=  %>">Profile</a></li>
         <% if session[:id] %>
-          <%= session.id  %>
+          <%= session[:id][:name]  %>
           <li><a href="/logout">logout</a></li>
         <% else %>
           <li><a href="/login">Login</a></li>
 
           <li><a href="/users/new">register</a></li>
         <% end %>
-        <!-- < @current_user.name %> -->
+
 
       </ul>
     </div>
