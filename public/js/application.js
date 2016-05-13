@@ -5,4 +5,18 @@ $(document).ready(function() {
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
     Materialize.updateTextFields();
+
+    $("div.question-vote").on('click', "a", function(event){
+      event.preventDefault()
+      $.ajax({
+      })
+    })
+
+    $("div.questions").on('submit', "#reply", function(event){
+      event.preventDefault()
+      $.ajax({
+        method: "POST",
+        url: ""
+      })
+    })
 });
