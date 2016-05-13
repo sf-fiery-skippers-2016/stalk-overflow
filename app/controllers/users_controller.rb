@@ -20,7 +20,7 @@ end
 
 get '/users/:user_id/questions' do
   @user = User.find(params[:user_id])
-  erb :'/users/question'
+  erb :'users/question'
 end
 
 get '/users/:id/edit' do

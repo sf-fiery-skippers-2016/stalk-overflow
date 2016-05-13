@@ -7,7 +7,7 @@
     <li class="collection-item avatar">
       <img src="images/yuna.jpg" alt="" class="circle">
 
-      <p><%= question.body %></p>
+      <p><a href='/users/<%= question.user.id %>/questions/<%= question.id %>'><%= question.body %></a></p>
       <a href="#!" class="secondary-content"><i class="material-icons">vote</i></a>
     </li>
   </ul>
@@ -30,5 +30,5 @@
     </div>
   </div>
   <% end %>
-  <%= erb :"_response", layout: false, locals: {post: @question} %>
 
+<%= erb :'_response', layout: false, locals: { post: question } %>

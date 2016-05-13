@@ -23,12 +23,8 @@ end
 
 post '/users/:user_id/questions/:id/response' do
 #make new response for question
-  Question.find(params[:id]).responses.new(body: params[:comment])
-  if @question.save
-  redirect "/users/#{params[:user_id]}/questions/#{@question.id}"
-  else
-    erb :"/questions/new"
-  end
+  # @response = Question.find(params[:id]).responses.create(body: params[:comment])
+  redirect "/users/#{params[:user_id]}/questions/#{params[:id]}"
 end
 
 post '/users/:user_id/answers/:id/response' do
