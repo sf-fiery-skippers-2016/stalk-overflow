@@ -1,5 +1,5 @@
 5.times do
-  User.create(username: Faker::Internet.user_name, 
+  User.create(username: Faker::Internet.user_name,
   	password: '123',
   	email: Faker::Internet.email)
 end
@@ -34,7 +34,7 @@ end
 end
 
 10.times do
-  
+
 	Question.all.each do |question|
 		question.answers.create(
 			body: Faker::Lorem.paragraph,

@@ -1,4 +1,3 @@
-#form for new question
 get '/users/:user_id/questions/new' do
   
   
