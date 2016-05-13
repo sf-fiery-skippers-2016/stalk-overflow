@@ -5,7 +5,7 @@ get '/users/:user_id/questions' do
 end
 
 get '/users/:user_id/questions/new' do
-
+   logged_in?
   #your code here
   erb :"/questions/new"
 end

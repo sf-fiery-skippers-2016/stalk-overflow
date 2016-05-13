@@ -18,11 +18,18 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
 
         <li><a href="/users/1/questions/new">New question</a></li>
-        <li><a href="/users/new">Register</a></li>
+
         <li><a href="/users/<%=  %>">Profile</a></li>
-        <li><a href="/sessions/new">Login</a></li>
-        <li><a href="/sessions/<%=  %>">logout</a></li>
-        <li><a href="/users/new">register</a></li>
+        <% if session[:id] %>
+          <%= session.id  %>
+          <li><a href="/logout">logout</a></li>
+        <% else %>
+          <li><a href="/login">Login</a></li>
+
+          <li><a href="/users/new">register</a></li>
+        <% end %>
+        <!-- < @current_user.name %> -->
+
 
       </ul>
     </div>
