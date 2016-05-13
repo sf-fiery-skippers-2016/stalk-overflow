@@ -1,8 +1,13 @@
-<div id="<%= answer.id %>" class="answers">
-			<span class="upvote">^</span><h3><li><%= answer.body %></li></h3>
+		<div id="<%= answer.id %>" class="answers">
+			<a href="/users/<%= session[:id].id %>/answers/<%= answer.id %>/vote"><span class="upvote">^</span></a>
+			<h3><li><%= answer.body %></li></h3>
 		</div>
-		<% answer.responses.each do |response| %>
-		<div id="<%= response.id %>" class="responses">
-			<a href=""><span class="upvote">^</span></a><p><li><%= response.body %></li></p>
-		</div>	
+		<% unless answer.responses.length == 0 %>
+			<% answer.responses.each do |response| %>
+			<div id="<%= response.id %>" class="responses">
+				<a href="/users/<%= session[:id].id %>/responses/<%= response.id %>/vote"><span class="upvote">^</span></a>
+				<p><li><%= response.body %></li></p>
+			</div>	
+			<% end %>
 		<% end %>
+
