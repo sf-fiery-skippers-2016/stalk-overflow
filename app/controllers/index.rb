@@ -1,4 +1,4 @@
 get '/' do
-  # Look in app/views/index.erb
+  @questions = Question.order(:created_at)
   erb :index
 end

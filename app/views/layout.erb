@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script   src="https://code.jquery.com/jquery-1.12.3.min.js"   integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="   crossorigin="anonymous"></script>
     <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-
+  <script type="text/javascript" src="/js/application.js"></script>
     <meta charset="UTF-8">
     <title></title>
   </head>
@@ -18,9 +19,9 @@
 
         <li><a href="/users/1/questions/new">New question</a></li>
         <li><a href="/users/new">Register</a></li>
-        <li><a href="/users/<%=  %>">Profile</a></li>
+        <li><a href="/users/<%= session[:id] %>">Profile</a></li>
         <li><a href="/sessions/new">Login</a></li>
-        <li><a href="/sessions/<%=  %>">logout</a></li>
+        <li><a href="/sessions/<%= session[:id] %>">logout</a></li>
         <li><a href="/users/new">register</a></li>
 
       </ul>

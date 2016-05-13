@@ -1,0 +1,29 @@
+<h1><%= question.title %></h1>
+
+  <ul class="collection">
+    <li class="collection-item avatar">
+      <img src="images/yuna.jpg" alt="" class="circle">
+
+      <p><%= question.body %></p>
+      <a href="#!" class="secondary-content"><i class="material-icons">vote</i></a>
+    </li>
+  </ul>
+
+  <% if question.top_answer %>
+  <h3>Top Answer</h3>
+  <div class="row">
+    <div class="col s10">
+      <ul class="collection">
+        <li class="collection-item avatar answer">
+          <img src="images/yuna.jpg" alt="" class="circle">
+
+          <p><%= question.top_answer.body %>
+          </p>
+          <a href="#!" class="secondary-content"><i class="material-icons">vote</i></a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+  <% end %>
