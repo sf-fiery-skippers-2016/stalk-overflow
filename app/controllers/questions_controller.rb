@@ -1,6 +1,5 @@
 get '/users/:user_id/questions/new' do
-  
-  
+   logged_in?
   #your code here
   erb :"/questions/new"
 end
@@ -20,7 +19,6 @@ end
 #Question Show Page
 get '/users/:user_id/questions/:id' do
   @question = Question.find(params[:id])
-  
   erb :"/questions/show"
 end
 
