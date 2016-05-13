@@ -1,0 +1,43 @@
+<h3>Pssst, this is your Stalking Profile</h3>
+
+<div class="col s10">
+<table class="responsive-table">
+        <thead>
+          <tr>
+              <th data-field="id">Username</th>
+              <th data-field="name">Email</th>
+          
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><%= @user.username %></td>
+            <td><%= @user.email %></td>
+           
+          </tr>
+          
+        </tbody>
+</table>
+</div>
+
+<div class="row">
+        <div class="col s12">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Stalker Badge
+              </span>
+              <p>Upvote Count: <%= @vote_count.count %></p><br>
+
+              <p>User Answers:</p><br>
+
+              <% @answer.each do |answer| %>
+              <p><%= answer.body %></p><br>
+              <% end %>
+            </div>
+            <div class="card-action">
+              
+            </div>
+          </div>
+        </div>
+      </div>

@@ -3,8 +3,10 @@ get'/users/new' do
 erb :'/users/new'
 end
 
-get '/users/:user_id' do
-
+get '/users/:id' do
+  @user = User.find(params[:id])
+  @answer = Answer.where(user_id: @user.id)
+  @vote_count = Vote.where(user_id: @user.id)
   erb :'/users/show'
 end
 
