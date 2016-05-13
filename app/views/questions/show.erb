@@ -1,0 +1,7 @@
+<%= erb :"/users/_question", layout: false, locals: {question: @question} %>
+<ul>
+	<% @question.answers.each do |answer| %>
+		<%= erb :"/questions/_answer", layout: false, locals: {answer: answer} %>
+		
+	<% end %>
+</ul>

@@ -16,11 +16,10 @@ post '/users/:user_id/questions' do
   end
 end
 
-# Individual view of a question
+#Question Show Page
 get '/users/:user_id/questions/:id' do
-
-  #your code here
-  erb :"/users/question"
+  @question = Question.find(params[:id])
+  erb :"/questions/show"
 end
 
  get '/users/:user_id/questions/:id/edit' do
