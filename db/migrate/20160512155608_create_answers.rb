@@ -4,6 +4,8 @@ class CreateAnswers < ActiveRecord::Migration
   		t.integer :question_id
   		t.string :body
   		t.integer :user_id
+      t.boolean :top_answer, default: false
+      # t.integer :top_answer_id
 
   		t.timestamps null: false
   	end

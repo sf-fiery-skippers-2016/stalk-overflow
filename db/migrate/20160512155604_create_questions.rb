@@ -4,7 +4,7 @@ class CreateQuestions < ActiveRecord::Migration
   		t.integer :user_id
   		t.string :title
   		t.string :body
-  		t.integer :top_answer_id
+
 
   		t.timestamps null: false
   	end
