@@ -5,6 +5,8 @@ end
 
 get '/users/:id' do
   @user = User.find(params[:id])
+  @answer = Answer.where(user_id: @user.id)
+  @vote_count = Vote.where(user_id: @user.id)
   erb :'/users/show'
 end
 
