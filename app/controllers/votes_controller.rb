@@ -1,9 +1,13 @@
 #route for adding vote to a question
 get '/users/:user_id/questions/:question_id/vote' do
+
 	question = Question.find(params[:question_id])
 	question.votes.create
-  
+	if params[:index] == "yes"
+		redirect '/'
+	else
   redirect "/users/#{session[:id].id}/questions/#{question.id}"
+	end
 end
 
 #route for adding vote to an answer

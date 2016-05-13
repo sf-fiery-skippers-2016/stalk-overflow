@@ -1,6 +1,6 @@
 get '/users/:user_id/questions/new' do
    logged_in?
-  #your code here
+  @question = Question.new
   erb :"/questions/new"
 end
 
