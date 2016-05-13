@@ -1,9 +1,4 @@
-get '/users/:user_id/questions' do
-
-  #your code here
-
-end
-
+#form for new question
 get '/users/:user_id/questions/new' do
   
   
@@ -11,6 +6,7 @@ get '/users/:user_id/questions/new' do
   erb :"/questions/new"
 end
 
+#create new question and save to DB
 post '/users/:user_id/questions' do
 
   @question = Question.create(title: params[:title], body: params[:body], user_id: 1)
@@ -22,8 +18,9 @@ post '/users/:user_id/questions' do
   end
 end
 
+# Individual view of a question
 get '/users/:user_id/questions/:id' do
-  # Individual view of a question
+  
   #your code here
   erb :"/users/question"
 end

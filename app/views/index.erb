@@ -1,47 +1,10 @@
-  <h1>Lates Questions...</h1>
+  <h1>Latest Questions...</h1>
 
-<ul class="collection">
-    <li class="collection-item avatar">
-      <img src="images/yuna.jpg" alt="" class="circle">
-      <a href="/users/1/questions/1" class="title">How can i use mongo with sinatra?</a>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">vote</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle">picture</i>
-      <a href="/users/1/questions/1" class="title">How can i use mongo with sinatra?</a>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">vote</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <img src="images/yuna.jpg" alt="" class="circle">
-      <span class="title">How can i use mongo with sinatra?</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">vote</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle">picture</i>
-      <span class="title">How can i use mongo with sinatra?</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">vote</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <img src="images/yuna.jpg" alt="" class="circle">
-      <span class="title">How can i use mongo with sinatra?</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">vote</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle">picture</i>
-      <span class="title">How can i use mongo with sinatra?</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">vote</i></a>
-    </li>
-
-  </ul>
+<ul class="collection question-list">
+  <% @questions.each do |question| %>
+  <div id="<%= question.id %>">
+  <!-- route needs to be changed still -->
+  <a href="/users/1/questions/<%= question.id %>"><li><%= question.title %></li></a>
+  </div>
+  <% end %>
+</ul>
