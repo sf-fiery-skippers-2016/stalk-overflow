@@ -9,7 +9,7 @@
     </li>
   </ul>
 
-  <% if question.top_answer %>
+  <% if question.answers.each do .top_answer %>
   <h3>Top Answer</h3>
   <div class="row">
     <div class="col s10">
@@ -27,3 +27,4 @@
     </div>
   </div>
   <% end %>
+
