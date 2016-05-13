@@ -1,13 +1,13 @@
 <div class="question-vote">
-<a href="/users/<%= session[:id].id %>/questions/<%= question.id %>/vote"><span>^</span></a>
-<h1><%= question.title %></h1>
+<a href="/users/<%= session[:id].id %>/questions/<%= question.id %>"><span>^</span></a>
+<h1><a href='/users/<%= question.user.id %>/questions/<%= question.id %>'><%= question.title %></a></h1>
 </div>
 
   <ul class="collection">
     <li class="collection-item avatar">
       <img src="images/yuna.jpg" alt="" class="circle">
 
-      <p><a href='/users/<%= question.user.id %>/questions/<%= question.id %>'><%= question.body %></a></p>
+      <p><%= question.body %></p>
       <a href="#!" class="secondary-content"><i class="material-icons">vote</i></a>
     </li>
   </ul>
@@ -31,4 +31,4 @@
   </div>
   <% end %>
 
-<%= erb :'_response', layout: false, locals: { post: question } %>
+<%= erb :'_reply', layout: false, locals: { post: question } %>

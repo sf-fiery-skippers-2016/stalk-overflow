@@ -1,6 +1,6 @@
-class CreateResponses < ActiveRecord::Migration
+class CreateReplies < ActiveRecord::Migration
   def change
-  	create_table :responses do |t|
+  	create_table :replies do |t|
   		t.integer :post_id
   		t.string :post_type
   		t.string :body
@@ -8,6 +8,6 @@ class CreateResponses < ActiveRecord::Migration
 
   		t.timestamps null: false
   	end
-  	add_index :responses, :post_id
+  	add_index :replies, :post_id
   end
 end

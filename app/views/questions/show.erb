@@ -2,6 +2,6 @@
 <ul>
 	<% @question.answers.each do |answer| %>
 		<%= erb :"/questions/_answer", layout: false, locals: {answer: answer} %>
-		
+
 	<% end %>
 </ul>
