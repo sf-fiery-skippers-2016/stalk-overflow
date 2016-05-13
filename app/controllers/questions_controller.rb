@@ -21,6 +21,27 @@ get '/users/:user_id/questions/:id' do
   erb :"/questions/show"
 end
 
+post '/users/:user_id/questions/:id/response' do
+#make new response for question
+  Question.find(params[:id]).responses.new(body: params[:comment])
+  if @question.save
+  redirect "/users/#{params[:user_id]}/questions/#{@question.id}"
+  else
+    erb :"/questions/new"
+  end
+end
+
+post '/users/:user_id/answers/:id/response' do
+#make new response for question
+  @question = User.find(params[:user_id]).questions.new(title: params[:title], body: params[:body])
+  if @question.save
+  redirect "/users/#{params[:user_id]}/questions/#{@question.id}"
+  else
+    erb :"/questions/new"
+  end
+end
+
+
 get '/users/:user_id/questions/:id/edit' do
 
   #your code here
