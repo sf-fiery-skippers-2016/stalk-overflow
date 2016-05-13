@@ -3,8 +3,8 @@ get'/users/new' do
 erb :'/users/new'
 end
 
-get '/users/:user_id' do
-  @user = User.find(:user_id)
+get '/users/:id' do
+  @user = User.find(params[:id])
   erb :'/users/show'
 end
 
