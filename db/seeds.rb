@@ -30,7 +30,7 @@ end
   			body: Faker::StarWars.quote,
   			user_id: rand(1..User.all.length)
   			)
-		endds
+		end
 end
 
 10.times do
