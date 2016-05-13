@@ -22,13 +22,13 @@
         <li><a href="/users/<%=  %>">Profile</a></li>
         <% if session[:id] %>
           <%= session.id  %>
-          <li><a href="/logout">logout</a></li>
+          <li><a href="/sessions/<%= session[:id] %>">logout</a></li>
         <% else %>
-          <li><a href="/login">Login</a></li>
+          <li><a href="/sessions/new">Login</a></li>
 
           <li><a href="/users/new">register</a></li>
         <% end %>
-        <!-- < @current_user.name %> -->
+
 
       </ul>
     </div>
