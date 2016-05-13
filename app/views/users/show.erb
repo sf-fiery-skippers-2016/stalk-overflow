@@ -22,15 +22,21 @@
 </div>
 
 <div class="row">
-        <div class="col s8 m6">
+        <div class="col s12">
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
-              <span class="card-title">Stalker Badge</span>
-              <p>Top Answer:</p>
-              <p><%=  %></p>
+              <span class="card-title">Stalker Badge
+              </span>
+              <p>Upvote Count: <%= @vote_count.count %></p><br>
+
+              <p>User Answers:</p><br>
+
+              <% @answer.each do |answer| %>
+              <p><%= answer.body %></p><br>
+              <% end %>
             </div>
             <div class="card-action">
-              <p>Upvote Count</p><%= %>
+              
             </div>
           </div>
         </div>
