@@ -15,7 +15,7 @@
       <!-- <img src="images/yuna.jpg" alt="" class="circle"> -->
       <a href="/users/1/questions/<%= question.id %>" class="title"><%= question.title %> ?</a>
 
-      <a href="#!" class="secondary-content"><i class="material-icons">thumb_up</i> <%= question.votes.count %> votes</a>
+      <a href="/users/<%= session[:id].id %>/questions/<%= question.id %>/vote?index=yes" class="secondary-content"><i class="material-icons">thumb_up</i> <%= question.votes.count %> votes</a>
 
     </li>
 
