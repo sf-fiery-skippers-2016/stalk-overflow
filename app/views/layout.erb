@@ -18,9 +18,9 @@
 
         <li><a href="/users/1/questions/new">New question</a></li>
         <li><a href="/users/new">Register</a></li>
-        <li><a href="/users/<%=  %>">Profile</a></li>
+        <li><a href="/users/<%= session[:id] %>">Profile</a></li>
         <li><a href="/sessions/new">Login</a></li>
-        <li><a href="/sessions/<%=  %>">logout</a></li>
+        <li><a href="/sessions/<%= session[:id] %>">logout</a></li>
         <li><a href="/users/new">register</a></li>
 
       </ul>
