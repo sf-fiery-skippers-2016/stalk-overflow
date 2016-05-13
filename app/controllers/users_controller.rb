@@ -4,7 +4,7 @@ erb :'/users/new'
 end
 
 get '/users/:user_id' do
-
+  @user = User.find(:user_id)
   erb :'/users/show'
 end
 

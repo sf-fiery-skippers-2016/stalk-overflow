@@ -19,7 +19,7 @@
 
         <li><a href="/users/1/questions/new">New question</a></li>
 
-        <li><a href="/users/<%=  %>">Profile</a></li>
+        <li><a href="/users/<%= @user.id %>">Profile</a></li>
         <% if session[:id] %>
           <%= session.id  %>
           <li><a href="/sessions/<%= session[:id] %>">logout</a></li>
