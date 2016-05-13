@@ -12,6 +12,10 @@ post '/login' do
 
     if new_user && new_user.authenticate(password)
       session[:id] = new_user
+      @current_user = {id: new_user.id,
+                      username: new_user.username,
+                      email: new_user.email}
+      p @current_user
       redirect '/' #Is this the route we are redirecting?
     else
       redirect '/login?error=Wrong%20combination%20of%20user%20and%20password'

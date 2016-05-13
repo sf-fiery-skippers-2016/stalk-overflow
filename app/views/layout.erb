@@ -17,11 +17,12 @@
       <a href="/" class="brand-logo">Stalk Overflow</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-        <li><a href="/users/<%= session[:id] %>/questions/new">New question</a></li>
 
-        <li><a href="/users/<%= @user %>">Profile</a></li>
         <% if session[:id] %>
-          <%= session[:id]  %>
+          <li><a href="/users/<%= session[:id].id %>/questions/new">New question</a></li>
+
+          <li><a href="/users/<%= session[:id].id %>">Profile</a></li>
+          <%= session[:id].username  %>
           <li><a href="/logout">logout</a></li>
         <% else %>
           <li><a href="/login">Login</a></li>

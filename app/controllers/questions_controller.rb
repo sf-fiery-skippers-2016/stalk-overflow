@@ -7,12 +7,11 @@ end
 #create new question and save to DB
 post '/users/:user_id/questions' do
 
-  @question = Question.create(title: params[:title], body: params[:body], user_id: 1)
-  if @question
-  redirect "/users/:user_id/questions/:id"
+  @question = User.find(params[:user_id]).questions.new(title: params[:title], body: params[:body])
+  if @question.save
+  redirect "/users/#{params[:user_id]}/questions/#{@question.id}"
   else
-    #change this redirect to pass the correct session ID
-    redirect '/users/1/questions/new'
+    erb :"/questions/new"
   end
 end
 
@@ -22,7 +21,7 @@ get '/users/:user_id/questions/:id' do
   erb :"/questions/show"
 end
 
- get '/users/:user_id/questions/:id/edit' do
+get '/users/:user_id/questions/:id/edit' do
 
   #your code here
 

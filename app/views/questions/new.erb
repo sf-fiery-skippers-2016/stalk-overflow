@@ -1,3 +1,5 @@
+<%= erb :'_error', layout: false, locals: {user: @question} %>
+
 <div class="row">
     <h1>What do you want to know?</h1>
     <form class="col s12" action="/users/1/questions" method="post">
@@ -18,7 +20,7 @@
         <button class="btn waves-effect waves-light" type="submit" name="action">Submit
           <i class="material-icons right">send</i>
         </button>
-      
+
     </form>
   </div>
 
