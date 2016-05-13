@@ -1,8 +1,4 @@
-get '/users/:user_id/questions' do
 
-  #your code here
-
-end
 
 get '/users/:user_id/questions/new' do
 
