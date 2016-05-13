@@ -1,6 +1,6 @@
 <% if post.class == Question %>
   <% post_type = "questions" %>
-<% else %>
+<% else post.class == Answer%>
   <% post_type = "answers" %>
 <% end %>
 
@@ -8,7 +8,7 @@
   <div class="container">
     <div class="col s12 m6 offset-m3 l4 offset-l4">
 
-      <form action="/users/<%= session[:id].id %>/<%= post_type %>/<%= post.id %>/reply" method="POST">
+      <form id="reply" action="/users/<%= session[:id].id %>/answers/<%= post.id %>/reply" method="POST">
         <div class="row">
           <div class="input-field col s12">
             <label for="Comment">Comment</label>
