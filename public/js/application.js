@@ -12,11 +12,18 @@ $(document).ready(function() {
       })
     })
 
-    $("div.questions").on('submit', "#reply", function(event){
-      event.preventDefault()
-      $.ajax({
-        method: "POST",
-        url: ""
-      })
-    })
+    // $("form#reply").on('submit', function(event){
+    //   event.preventDefault()
+    //   var comment = $(this).serialize()
+    //   var answerIdWithReply = $(this).attr("action").replace(/\/users\/[\d]\/answers\//, "")
+    //   var answerId = answerIdWithReply.replace(/\/reply/, "")
+    //   console.log(answerId)
+    //   $.ajax({
+    //     method: "POST",
+    //     url: $(this).attr("action"),
+    //     data: comment
+    //   }).done(function(message) {
+    //     $("div#" + answerId).append(message)
+    //   })
+    // })
 });

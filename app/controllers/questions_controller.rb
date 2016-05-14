@@ -21,17 +21,20 @@ get '/users/:user_id/questions/:id' do
   erb :"/questions/show"
 end
 
-post '/users/:user_id/questions/:id/reply' do
-#make new response for question
-  @reply = Question.find(params[:id]).replies.create(body: params[:comment])
-  redirect "/users/#{params[:user_id]}/questions/#{params[:id]}"
-end
+# post '/users/:user_id/questions/:id/reply' do
+# #make new response for question
+#   @reply = Question.find(params[:id]).replies.create(body: params[:comment])
+#   redirect "/users/#{params[:user_id]}/questions/#{params[:id]}"
+# end
 
 post '/users/:user_id/answers/:id/reply' do
-#make new response for question
   @answer = Answer.find(params[:id])
   @reply = @answer.replies.create(body: params[:comment])
-  redirect "/users/#{params[:user_id]}/questions/#{@answer.question.id}"
+  if request.xhr?
+    erb :'single_answer', layout: false, locals: { post: @answer }
+  else
+    redirect "/users/#{params[:user_id]}/questions/#{@answer.question.id}"
+  end
 end
 
 

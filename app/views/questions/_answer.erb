@@ -1,15 +1,13 @@
 		<div id="<%= answer.id %>" class="answers">
 			<a href="/users/<%= session[:id].id %>/answers/<%= answer.id %>/vote"><span class="upvote">^</span></a>
 			<h3><li><%= answer.body %></li></h3>
-		</div>
 		<% unless answer.replies.length == 0 %>
 			<% answer.replies.each do |reply| %>
-			<div id="<%= reply.id %>" class="replies">
-				<a href="/users/<%= session[:id].id %>/replies/<%= reply.id %>/vote"><span class="upvote">^</span></a>
-				<p><li><%= reply.body %></li></p>
-			</div>
+				<%= erb :'single_answer', layout: false, locals: { reply: reply } %>
 			<% end %>
 		<% end %>
-		<%= erb :'_reply', layout: false, locals: { post: answer } %>
 
+		</div>
+
+		<%= erb :'_reply', layout: false, locals: { post: answer } %>
 
